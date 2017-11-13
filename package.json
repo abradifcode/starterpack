@@ -1,7 +1,7 @@
 {
   "name": "startPack",
   "version": "0.1.0",
-  "description": "Startpack with pug sass bootstrap-3 etc",
+  "description": "Startpack with pug sass foundation-6 etc",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -31,7 +31,7 @@
     "gulp-uglifyjs": "^0.6.2"
   },
   "dependencies": {
-    "bootstrap-sass": "^3.3.7",
+    "foundation-sites": "^6.4.4-rc1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "svg4everybody": "^2.1.8"
