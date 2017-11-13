@@ -4,3 +4,19 @@ block variables
 	- var title = 'Главная страница'
 
 block content
+	ul.accordion(data-accordion="")
+			li.accordion-item.is-active(data-accordion-item="")
+				a.accordion-title(href="#") Accordion 1
+				.accordion-content(data-tab-content="")
+					p Panel 1. Lorem ipsum dolor
+					a(href="#") Nowhere to Go
+			li.accordion-item(data-accordion-item="")
+				a.accordion-title(href="#") Accordion 2
+				.accordion-content(data-tab-content="")
+					textarea
+					button.button I do nothing!
+			li.accordion-item(data-accordion-item="")
+				a.accordion-title(href="#") Accordion 3
+				.accordion-content(data-tab-content="")
+					| Type your name!
+					input(type="text")

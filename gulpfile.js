@@ -24,7 +24,7 @@ $.gulp.task('build', $.gulp.series(
 
 
 $.gulp.task('default', $.gulp.series(
-  'dev',
+  'dev', 
   $.gulp.parallel(
     'watch',
     'serve'
