@@ -8,5 +8,6 @@ module.exports = [
   './gulp/tasks/fonts',
   './gulp/tasks/scripts',
   './gulp/tasks/sass.js',
-  './gulp/tasks/fafonts.js'
+  // './gulp/tasks/fafonts.js',
+  //'./gulp/tasks/webpack.js'
 ];

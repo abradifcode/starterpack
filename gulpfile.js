@@ -6,7 +6,9 @@ global.$ = {
   del: require('del'),
   fs: require('fs'),
   browserSync: require('browser-sync').create(),
-  gp: require('gulp-load-plugins')()
+  gp: require('gulp-load-plugins')(),
+  webpack: require('webpack'),
+  webpackConfig: require('./webpack.config.js')
 };
 
 $.path.task.forEach(function (taskPath) {
@@ -14,17 +16,23 @@ $.path.task.forEach(function (taskPath) {
 });
 
 
-$.gulp.task('dev', $.gulp.series(
+$.gulp.task('src', $.gulp.series(
   'clean',
-  $.gulp.parallel('styles:dev',  'pug', 'libsJS:dev', 'js:copy', 'svg', 'img:dev', 'fonts', 'fafonts')));
+  $.gulp.parallel('styles:src',  'pug', 'libsJS:src', 'webpack', 'svg', 'img:src', 'fonts')));
+/*$.gulp.task('src', $.gulp.series(
+  'clean',
+  $.gulp.parallel('styles:src',  'pug', 'webpack', 'svg', 'img:src', 'fonts', 'fafonts')));*/
 
+/*$.gulp.task('build', $.gulp.series(
+  'clean',
+  $.gulp.parallel('styles:build',  'pug', 'webpack', 'svg', 'img:build', 'fonts', 'fafonts')));*/
 $.gulp.task('build', $.gulp.series(
   'clean',
-  $.gulp.parallel('styles:build',  'pug', 'libsJS:build', 'js:copy', 'svg', 'img:build', 'fonts', 'fafonts')));
+  $.gulp.parallel('styles:build',  'pug', 'libsJS:build', 'webpack', 'svg', 'img:build', 'fonts')));
 
 
 $.gulp.task('default', $.gulp.series(
-  'dev',
+  'src',
   $.gulp.parallel(
     'watch',
     'serve'

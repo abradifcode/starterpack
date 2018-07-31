@@ -1,12 +1,12 @@
 module.exports = function () {
-  $.gulp.task('img:dev', () => {
-    return $.gulp.src('./dev/static/img/**/*.*')
-      .pipe($.gulp.dest('./build/static/img/'));
+  $.gulp.task('img:src', () => {
+    return $.gulp.src('./src/assets/img/**/*.*')
+      .pipe($.gulp.dest('./build/assets/img/'));
   });
 
   $.gulp.task('img:build', () => {
-    return $.gulp.src('./dev/static/img/**/*.*')
+    return $.gulp.src('./src/assets/img/**/*.*')
       .pipe($.gp.imagemin())
-      .pipe($.gulp.dest('./build/static/img/'));
+      .pipe($.gulp.dest('./build/assets/img/'));
   });
 };

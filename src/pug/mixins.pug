@@ -1,0 +1,25 @@
+mixin icon(name,mod)
+  - mod = mod || ''
+  svg(class="icon icon-" + name + ' ' + mod)
+    use(xlink:href="/assets/img/svg/symbol/sprite.svg#" + name)
+
+
+mixin nav(className, activeItem)
+  nav(class= className)
+    ul(class= className+'__list')
+      each link,title in nav.mainNav
+        if title == 'About'
+          li(class= className+'__item '+className+'__item_active')
+            a(class= className+'__link' href= link)= title
+        else
+          li(class= className+'__item')
+            a(class= className+'__link' href= link)= title
+
+
+mixin socials(socialsClass)
+  ul(class= socialsClass)
+    each link,title in nav.socials
+      li(class= socialsClass+'__item')
+        a(class= socialsClass+'__link '+socialsClass+'__link_'+title href= link)
+          +icon(title)
+
