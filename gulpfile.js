@@ -18,7 +18,7 @@ $.path.task.forEach(function (taskPath) {
 
 $.gulp.task('src', $.gulp.series(
   'clean',
-  $.gulp.parallel('styles:src',  'pug', 'libsJS:src', 'webpack', 'svg', 'img:src', 'fonts')));
+  $.gulp.parallel('styles:src', 'pug', 'libsJS:src', 'webpack', 'svg', 'img:src', 'fonts', 'fafonts')));
 /*$.gulp.task('src', $.gulp.series(
   'clean',
   $.gulp.parallel('styles:src',  'pug', 'webpack', 'svg', 'img:src', 'fonts', 'fafonts')));*/
@@ -28,7 +28,7 @@ $.gulp.task('src', $.gulp.series(
   $.gulp.parallel('styles:build',  'pug', 'webpack', 'svg', 'img:build', 'fonts', 'fafonts')));*/
 $.gulp.task('build', $.gulp.series(
   'clean',
-  $.gulp.parallel('styles:build',  'pug', 'libsJS:build', 'webpack', 'svg', 'img:build', 'fonts')));
+  $.gulp.parallel('styles:build', 'pug', 'libsJS:build', 'webpack', 'svg', 'img:build', 'fonts', 'fafonts')));
 
 
 $.gulp.task('default', $.gulp.series(
